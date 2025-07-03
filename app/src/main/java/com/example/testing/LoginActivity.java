@@ -31,23 +31,26 @@ public class LoginActivity extends AppCompatActivity
         String password = edtPassword.getText().toString().trim();
 
         Executors.newSingleThreadExecutor().execute(() -> {
-            String response = client.loginCoach(username, password);
+            Coach coach = client.loginCoach(username, password);
             runOnUiThread(() -> {
-                if (response != null && !response.equals("[]")) {
+                if (coach != null) {
+                    getSharedPreferences("MyAppPrefs", MODE_PRIVATE)
+                            .edit()
+                            .putLong("coach_ID", coach.coach_ID)
+                            .apply();
+
                     Toast.makeText(LoginActivity.this, "Login successful!", Toast.LENGTH_SHORT).show();
-                    // You can parse Coach info here if needed
-                    // Navigate to Dashboard
+
                     Intent intent = new Intent(LoginActivity.this, DashboardActivity.class);
                     startActivity(intent);
                     finish();
                 } else {
                     Toast.makeText(LoginActivity.this, "Invalid username or password", Toast.LENGTH_SHORT).show();
-                    Toast.makeText(LoginActivity.this, response, Toast.LENGTH_SHORT).show();
-                    Toast.makeText(LoginActivity.this, username+password, Toast.LENGTH_SHORT).show();
                 }
             });
         });
     }
+
 
     public void onRegisterCoachClicked(View view) {
         Intent intent = new Intent(LoginActivity.this, RegisterCoachActivity.class);

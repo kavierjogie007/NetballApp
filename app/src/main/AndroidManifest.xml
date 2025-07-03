@@ -15,6 +15,9 @@
         android:theme="@style/Theme.Testing"
         tools:targetApi="31">
         <activity
+            android:name=".ManageCouchProfile"
+            android:exported="false" />
+        <activity
             android:name=".RegisterCoachActivity"
             android:exported="false" />
         <activity

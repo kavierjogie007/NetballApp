@@ -24,24 +24,26 @@
         android:id="@+id/edtFirstName"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
         android:hint="Enter your first name"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@id/registerTitle"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Kavier"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="24dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/registerTitle" />
 
     <!-- Surname -->
     <EditText
         android:id="@+id/edtSurname"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:hint="Enter your surname"
         android:inputType="textPersonName"
-        app:layout_constraintTop_toBottomOf="@id/edtFirstName"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="Jogie"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtFirstName" />
 
     <!-- Role -->
     <Spinner
@@ -59,36 +61,39 @@
         android:id="@+id/edtUsername"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:hint="Create a username"
         android:inputType="text"
-        app:layout_constraintTop_toBottomOf="@id/spinnerRole"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="KJogie"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/spinnerRole" />
 
     <!-- Password -->
     <EditText
         android:id="@+id/edtPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:hint="Create a password"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/edtUsername"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="1234"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtUsername" />
 
     <!-- Confirm Password -->
     <EditText
         android:id="@+id/edtConfirmPassword"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:hint="Confirm password"
         android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/edtPassword"
-        app:layout_constraintStart_toStartOf="parent"
+        android:text="1234"
         app:layout_constraintEnd_toEndOf="parent"
-        android:layout_marginTop="16dp" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edtPassword" />
 
     <!-- Button Row -->
     <LinearLayout
@@ -106,21 +111,23 @@
             android:id="@+id/btnBack"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
             android:layout_weight="1"
-            android:text="BACK"
             android:backgroundTint="#A0A0A0"
-            android:textColor="@android:color/white"
-            android:layout_marginEnd="8dp" />
+            android:onClick="onBackClicked"
+            android:text="BACK"
+            android:textColor="@android:color/white" />
 
         <Button
             android:id="@+id/btnRegister"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
             android:layout_weight="1"
-            android:text="REGISTER"
             android:backgroundTint="#033E8C"
-            android:textColor="@android:color/white"
-            android:layout_marginStart="8dp" />
+            android:onClick="onRegisterClicked"
+            android:text="REGISTER"
+            android:textColor="@android:color/white" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
